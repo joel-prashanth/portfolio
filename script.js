@@ -1,28 +1,45 @@
-// Toggle Sidebar Menu
 function toggleSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    sidebar.classList.toggle("show");
+  document.getElementById("sidebar").classList.toggle("show");
 }
 
-// Toggle Light/Dark Mode
 function toggleTheme() {
-    const body = document.body;
-    body.classList.toggle("dark-mode");
+  document.body.classList.toggle("dark-mode");
+  const themeToggleBtn = document.querySelector(".theme-toggle");
 
-    // Save preference in localStorage
-    if (body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-        document.querySelector(".theme-toggle").textContent = "☀️"; // Change to sun icon
-    } else {
-        localStorage.setItem("theme", "light");
-        document.querySelector(".theme-toggle").textContent = "🌙"; // Change to moon icon
-    }
+  // Toggle icon based on theme
+  if (document.body.classList.contains("dark-mode")) {
+    themeToggleBtn.innerHTML = "☀️"; // Sun for light mode
+    localStorage.setItem("theme", "dark");
+  } else {
+    themeToggleBtn.innerHTML = "🌙"; // Moon for dark mode
+    localStorage.setItem("theme", "light");
+  }
 }
 
-// Apply saved theme on page load
-window.onload = function() {
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-        document.querySelector(".theme-toggle").textContent = "☀️";
-    }
+window.onload = function () {
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+  }
 };
+
+// Initialize the typing animation after the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+  var typed = new Typed("#typing-text", {
+    strings: ["Fullstack Developer", "Embedded Engineer", "UI/UX Designer"],
+    typeSpeed: 40,
+    backSpeed: 30,
+    backDelay: 1600,
+    loop: true,
+  });
+
+  // Smooth scrolling for all scroll-link elements
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+});

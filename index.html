@@ -9,15 +9,26 @@
   <body>
     <header>
       <nav class="navbar">
-        <a href="#" class="logo">JP</a>
+        <a href="#home" class="logo scroll-link">JP</a>
         <ul class="nav-links">
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#projects" class="scroll-link">Projects</a></li>
+          <li><a href="#gallery" class="scroll-link">Gallery</a></li>
+
+          <li><a href="#contact" class="scroll-link">Contact</a></li>
         </ul>
         <div class="menu-container">
-          <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
-          <div class="menu-icon" onclick="toggleSidebar()">
+          <button
+            class="theme-toggle"
+            onclick="toggleTheme()"
+            aria-label="Toggle Theme"
+          >
+            🌙
+          </button>
+          <div
+            class="menu-icon"
+            onclick="toggleSidebar()"
+            aria-label="Open Menu"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="30px"
@@ -34,33 +45,172 @@
       </nav>
 
       <div class="sidebar" id="sidebar">
-        <button class="close-btn" onclick="toggleSidebar()">✖</button>
+        <button
+          class="close-btn"
+          onclick="toggleSidebar()"
+          aria-label="Close Menu"
+        >
+          ✖
+        </button>
         <ul>
-          <li><a href="#gallery" onclick="toggleSidebar()">Gallery</a></li>
-          <li><a href="#projects" onclick="toggleSidebar()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
+
+            <li>
+                <a href="#projects" class="scroll-link" onclick="toggleSidebar()"
+                  >Projects</a
+                >
+              </li>
+          <li>
+            <a href="#gallery" class="scroll-link" onclick="toggleSidebar()"
+              >Gallery</a
+            >
+          </li>
+
+          <li>
+            <a href="#contact" class="scroll-link" onclick="toggleSidebar()"
+              >Contact</a
+            >
+          </li>
         </ul>
       </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-image">
-          <img src="joel.jpg" alt="Joel Prashanth">
-        </div>
-        <div class="hero-content">
-          <h1>Hi, I'm <span class="highlight">Joel Prashanth</span></h1>
-          <h2 class="animated-text"></h2>
-          <p>
-            Passionate about building innovative projects in web development and embedded systems.
-          </p>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn primary">View Projects</a>
-            <a href="#contact" class="btn secondary">Contact Me</a>
+    <main id="content">
+      <section id="home" class="home-section">
+        <!-- HERO SECTION -->
+        <section class="hero">
+          <div class="hero-image">
+            <img src="joel.jpg" alt="Joel Prashanth" />
+          </div>
+          <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Joel Prashanth</span></h1>
+            <h2 class="animated-text">
+              <span id="typing-text"></span><span class="cursor"></span>
+            </h2>
+
+            <p>
+              Passionate about building innovative projects in web development
+              and embedded systems.
+            </p>
+            <div class="hero-buttons">
+              <a
+                href="Joel_Prashanth_CV.pdf"
+                class="btn primary resume-btn"
+                download
+              >
+                Download Resume
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 16l4-5h-3V4h-2v7H8l4 5zM4 20h16v-2H4v2z" />
+                </svg>
+              </a>
+
+              <a
+                href="mailto:joel.prashanth0528@gmail.com"
+                class="btn secondary contact-btn"
+              >
+                Contact Me
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M2 4v16h20V4H2zm18 2l-8 5-8-5h16zm-16 12V8l8 5 8-5v10H4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="projects" class="projects-section">
+        <h1 class="section-title">Projects</h1>
+        <p class="section-description">Check out my latest projects.</p>
+      
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="project1.jpg" alt="Project 1" class="project-image" />
+            <h2>Project One</h2>
+            <p>Web-based dashboard for IoT devices.</p>
+            <div class="project-buttons">
+              <a href="#" class="btn primary">View</a>
+              <a href="#" class="btn secondary">GitHub</a>
+            </div>
+          </div>
+      
+          <div class="project-card">
+            <img src="project2.jpg" alt="Project 2" class="project-image" />
+            <h2>Project Two</h2>
+            <p>AI-powered chatbot for customer support.</p>
+            <div class="project-buttons">
+              <a href="#" class="btn primary">View</a>
+              <a href="#" class="btn secondary">GitHub</a>
+            </div>
+          </div>
+      
+          <div class="project-card">
+            <img src="project3.jpg" alt="Project 3" class="project-image" />
+            <h2>Project Three</h2>
+            <p>Mobile app for tracking fitness goals.</p>
+            <div class="project-buttons">
+              <a href="#" class="btn primary">View</a>
+              <a href="#" class="btn secondary">GitHub</a>
+            </div>
+          </div>
+      
+          <div class="project-card">
+            <img src="project4.jpg" alt="Project 4" class="project-image" />
+            <h2>Project Four</h2>
+            <p>Smart home automation system.</p>
+            <div class="project-buttons">
+              <a href="#" class="btn primary">View</a>
+              <a href="#" class="btn secondary">GitHub</a>
+            </div>
+          </div>
+      
+          <div class="project-card">
+            <img src="project5.jpg" alt="Project 5" class="project-image" />
+            <h2>Project Five</h2>
+            <p>Real-time traffic monitoring app.</p>
+            <div class="project-buttons">
+              <a href="#" class="btn primary">View</a>
+              <a href="#" class="btn secondary">GitHub</a>
+            </div>
+          </div>
+      
+          <div class="project-card">
+            <img src="project6.jpg" alt="Project 6" class="project-image" />
+            <h2>Project Six</h2>
+            <p>Blockchain-based voting system.</p>
+            <div class="project-buttons">
+              <a href="#" class="btn primary">View</a>
+              <a href="#" class="btn secondary">GitHub</a>
+            </div>
           </div>
         </div>
       </section>
+      
+      
+      
+      <section id="gallery" class="gallery-section">
+        <h1>Gallery</h1>
+        <p>Here are my recent works...</p>
+      </section>
+    </main>
 
+    <footer id="contact" class="contact-section">
+      <h1>Contact Me</h1>
+      <p>Let's get in touch!</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>
   </body>
 </html>

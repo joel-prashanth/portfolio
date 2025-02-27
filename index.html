@@ -1,49 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Joel Prashanth | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        
-        <nav class="navbar">
-            <div class="logo">JP</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <h1>Hi I'm Joel</h1>
-        <p>Web Developer | Designer | Creator</p>
+      <nav class="navbar">
+        <a href="#" class="logo">JP</a>
+        <ul class="nav-links">
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-container">
+          <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+          <div class="menu-icon" onclick="toggleSidebar()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="30px"
+              viewBox="0 -960 960 960"
+              width="30px"
+              fill="currentColor"
+            >
+              <path
+                d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+              />
+            </svg>
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">✖</button>
+        <ul>
+          <li><a href="#gallery" onclick="toggleSidebar()">Gallery</a></li>
+          <li><a href="#projects" onclick="toggleSidebar()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
+        </ul>
+      </div>
     </header>
-    
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hi! I'm Joel, a passionate web developer creating beautiful and functional websites.</p>
-    </section>
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of the project.</p>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-image">
+          <img src="joel.jpg" alt="Joel Prashanth">
         </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of the project.</p>
+        <div class="hero-content">
+          <h1>Hi, I'm <span class="highlight">Joel Prashanth</span></h1>
+          <h2 class="animated-text"></h2>
+          <p>
+            Passionate about building innovative projects in web development and embedded systems.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="#contact" class="btn secondary">Contact Me</a>
+          </div>
         </div>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:joel@example.com">joel@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/joelprashanth">github.com/joelprashanth</a></p>
-    </section>
-    
+      </section>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

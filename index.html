@@ -3,69 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Joel Prashanth | Portfolio</title>
+    <title>Joel – Full Stack Developer</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/dark.css" id="theme-style" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code&display=swap"
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
   </head>
-
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">JP</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
+    <header class="site-header" role="banner">
+      <div class="container header-container">
+        <a href="#" class="logo" aria-label="Homepage">Joel</a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle menu"
+          aria-controls="navLinks"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks" role="navigation" aria-label="Site Navigation">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <button
+            id="themeToggle"
+            class="theme-toggle"
+            aria-label="Toggle dark/light theme"
+          >
+            🌓
+          </button>
+        </nav>
       </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero d-flex align-items-center" style="min-height: 100vh">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- Hero Text -->
-          <div class="col-md-6 text-center text-md-left">
-            <h1>Hi, I'm Joel</h1>
-            <p>Developer | Designer | Coder</p>
-          </div>
-
-          <!-- Hero Image -->
-          <div class="col-md-6 text-center">
-            <img
-              src="./images/joe's image.jpg"
-              alt="Joel's photo"
-              width="200px"
-              class="img-fluid rounded-circle"
-            />
-          </div>
+    <main class="hero" id="about">
+      <div class="container hero-content">
+        <img src="assets/images/joel.jpg" alt="Joel Profile" class="profile-pic" />
+        <h1>Hi, I'm Joel</h1>
+        <h2 id="typewriter" class="typewriter-text"></h2>
+        <p>Bringing ideas to life through clean code &amp; creativity.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-outline">Get in Touch</a>
         </div>
       </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <!-- <footer class="footer">
-      <div class="container">&copy; 2025 MyPortfolio | All rights reserved</div>
-    </footer> -->
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts/navToggle.js"></script>
+    <script src="scripts/themeToggle.js"></script>
+    <script src="scripts/typewriter.js"></script>
+    <script>
+      // Close nav on mobile when a nav link is clicked
+      document.querySelectorAll("#navLinks a").forEach((link) => {
+        link.addEventListener("click", () => {
+          const nav = document.getElementById("navLinks");
+          const menuToggle = document.getElementById("menuToggle");
+          if (window.innerWidth <= 768 && nav.classList.contains("show")) {
+            nav.classList.remove("show");
+            menuToggle.textContent = "☰";
+            menuToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

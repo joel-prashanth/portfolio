@@ -117,6 +117,15 @@ body {
   cursor: pointer;
   padding: 6px 12px;
   border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus,
+.theme-toggle:hover,
+.theme-toggle:focus {
+  background-color: rgba(255, 255, 255, 0.07);
+  outline: none;
 }
 
 /* Only show .menu-toggle on mobile */
@@ -128,18 +137,16 @@ body {
 .theme-toggle {
   margin-left: 1.2rem;
   font-size: 1.3rem;
-  transition: background 0.2s;
-}
-.theme-toggle:hover,
-.theme-toggle:focus {
-  background-color: rgba(255, 255, 255, 0.07);
-  outline: none;
 }
 
 /* Hero Section */
 .hero {
-  text-align: center;
-  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;  /* fill whole viewport height */
+  padding: 0 1rem;
+  text-align: center; /* fallback for small screens */
 }
 
 .profile-pic {
@@ -147,14 +154,31 @@ body {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 1rem;
   border: 3px solid var(--color-accent);
   background-color: #fff;
+  display: block;
 }
 
-.hero-content h1 {
-  font-size: 2.5rem;
+/* Side-by-side hero layout on desktop */
+.hero-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.hero-image {
+  flex-shrink: 0;
+}
+
+.hero-text {
+  text-align: left;
+  max-width: 500px;
+}
+
+.hero-text h1 {
   margin: 0 0 0.3rem 0;
+  font-size: 2.5rem;
 }
 
 .typewriter-text {
@@ -164,13 +188,13 @@ body {
   min-height: 1.5rem;
 }
 
-.hero-content p {
-  max-width: 600px;
-  margin: 1rem auto;
+.hero-text p {
+  margin: 1rem 0;
   font-size: 1rem;
   line-height: 1.6;
 }
 
+/* Buttons */
 .hero-buttons {
   margin-top: 2rem;
 }
@@ -217,6 +241,13 @@ body {
     padding: 0 1rem;
   }
 
+  /* Show hamburger menu button */
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    z-index: 1100;
+  }
+
   .nav-links {
     flex-direction: column;
     align-items: flex-end;
@@ -245,16 +276,22 @@ body {
     padding: 1rem 1.5rem 0 1.5rem;
   }
 
-  .menu-toggle {
-    display: block;
-    margin-left: auto;
-    z-index: 1100;
-  }
-
-  /* Nav theme toggle stretches to right under menu */
+  /* Theme toggle inside mobile nav */
   .theme-toggle {
     margin: 1rem 1.5rem 1rem 0;
     align-self: flex-end;
+  }
+
+  /* Reset hero layout on small screens */
+  .hero-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
   }
 }
 

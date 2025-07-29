@@ -234,7 +234,7 @@ body {
   outline: none;
 }
 
-/* Responsive Navigation */
+/* Responsive Navigation - Tablet and Mobile */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: row;
@@ -338,6 +338,134 @@ body {
 
   .hero-text {
     text-align: center;
+  }
+}
+
+/* iPhone and smaller screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+  }
+
+  .header-container {
+    padding: 0 0.75rem;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .menu-toggle {
+    font-size: 1.2rem;
+    padding: 4px 8px;
+  }
+
+  .nav-links {
+    width: 85%; /* Wider on small screens */
+    max-width: 280px;
+    padding-top: 4rem;
+  }
+
+  .nav-links ul {
+    padding: 0 1.5rem;
+    gap: 1.2rem;
+  }
+
+  .close-btn {
+    top: 0.8rem;
+    right: 0.8rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.8rem;
+  }
+
+  .theme-toggle {
+    font-size: 1.2rem;
+    margin: 0.8rem 1.2rem 0.8rem 0;
+  }
+
+  .hero {
+    height: 85vh;
+    padding: 0 0.75rem;
+  }
+
+  .hero-flex {
+    gap: 1.2rem;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-width: 2px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .typewriter-text {
+    font-size: 1.1rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+    margin: 0.8rem 0;
+  }
+
+  .hero-buttons {
+    margin-top: 1.5rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    margin-right: 0.8rem;
+  }
+}
+
+/* iPhone SE and very small screens */
+@media (max-width: 375px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .nav-links {
+    width: 90%;
+    max-width: 260px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .typewriter-text {
+    font-size: 1rem;
+  }
+
+  .hero-text p {
+    font-size: 0.85rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .btn-primary {
+    margin-right: 0;
   }
 }
 

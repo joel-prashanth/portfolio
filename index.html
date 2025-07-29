@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Joel – Full Stack Developer</title>
+    <title>Joel Prashanth | Portfolio</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/dark.css" id="theme-style" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,7 +28,15 @@
           ☰
         </button>
 
-        <nav class="nav-links" id="navLinks" role="navigation" aria-label="Site Navigation">
+        <nav
+          class="nav-links"
+          id="navLinks"
+          role="navigation"
+          aria-label="Site Navigation"
+        >
+          <button class="close-btn" id="closeBtn" aria-label="Close menu">
+            ×
+          </button>
           <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -40,16 +48,21 @@
             class="theme-toggle"
             aria-label="Toggle dark/light theme"
           >
-            🌓
+            🌙
           </button>
         </nav>
+        <div id="backdrop" class="nav-backdrop"></div>
       </div>
     </header>
 
     <main class="hero" id="about">
       <div class="container hero-content hero-flex">
         <div class="hero-image">
-          <img src="assets/images/joel.jpg" alt="Joel Profile" class="profile-pic" />
+          <img
+            src="assets/images/joel.jpg"
+            alt="Joel Profile"
+            class="profile-pic"
+          />
         </div>
         <div class="hero-text">
           <h1>Hi, I'm Joel</h1>
@@ -66,19 +79,6 @@
     <script src="scripts/navToggle.js"></script>
     <script src="scripts/themeToggle.js"></script>
     <script src="scripts/typewriter.js"></script>
-    <script>
-      // Close nav on mobile when a nav link is clicked
-      document.querySelectorAll("#navLinks a").forEach((link) => {
-        link.addEventListener("click", () => {
-          const nav = document.getElementById("navLinks");
-          const menuToggle = document.getElementById("menuToggle");
-          if (window.innerWidth <= 768 && nav.classList.contains("show")) {
-            nav.classList.remove("show");
-            menuToggle.textContent = "☰";
-            menuToggle.setAttribute("aria-expanded", "false");
-          }
-        });
-      });
-    </script>
+    <script src="scripts/menuToggle.js"></script>
   </body>
 </html>

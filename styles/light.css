@@ -2,5 +2,5 @@
   --color-bg: #ffffff;
   --color-text: #121212;
   --color-primary: #0077ff;
-  --color-accent: #00c896;
+  --color-accent: #4e7dff; /* ✅ Use this blue accent for buttons in light mode */
 }

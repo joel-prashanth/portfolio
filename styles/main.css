@@ -7,10 +7,6 @@
 
 /* Theme Variables */
 :root {
-  --color-bg: #222831;
-  --color-text: #f7f7fa;
-  --color-accent: #17c3b2;
-  --color-primary: #008cff;
   --font-sans: "Inter", sans-serif;
   --font-mono: "Fira Code", monospace;
 }
@@ -133,6 +129,11 @@ body {
   display: none;
 }
 
+/* Hide close button on desktop */
+.close-btn {
+  display: none;
+}
+
 /* The "theme-toggle" in nav sits to the right of the nav links */
 .theme-toggle {
   margin-left: 1.2rem;
@@ -144,7 +145,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;  /* fill whole viewport height */
+  height: 90vh; /* fill whole viewport height */
   padding: 0 1rem;
   text-align: center; /* fallback for small screens */
 }
@@ -245,35 +246,75 @@ body {
   .menu-toggle {
     display: block;
     margin-left: auto;
-    z-index: 1100;
+    z-index: 1300; /* Higher than nav-links */
   }
 
   .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 75%; /* Sidebar width (you can tweak it) */
+    max-width: 320px;
+    background: var(--color-bg);
+    padding-top: 5rem;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1200;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    background: var(--color-bg);
-    padding-top: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    z-index: 800;
-    width: 100%;
-    gap: 0;
   }
 
   .nav-links.show {
-    display: flex;
+    transform: translateX(0);
   }
 
   .nav-links ul {
     flex-direction: column;
     align-items: flex-end;
-    gap: 1rem;
+    gap: 1.5rem;
     width: 100%;
-    padding: 1rem 1.5rem 0 1.5rem;
+    padding: 0 2rem;
+  }
+
+  .close-btn {
+    display: block; /* Show on mobile */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-text);
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    /* Removed z-index - it inherits from parent nav-links */
+  }
+
+  .close-btn:hover,
+  .close-btn:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+    outline: none;
+  }
+
+  .nav-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1100;
+    transition: opacity 0.3s;
+  }
+
+  .nav-backdrop.show {
+    display: block;
   }
 
   /* Theme toggle inside mobile nav */
@@ -296,7 +337,8 @@ body {
 }
 
 /* Accessibility */
-.nav-links a:focus {
+.nav-links a:focus,
+.close-btn:focus {
   outline: 2px solid var(--color-accent);
 }
 

@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Allura";
+  src: url("../assets/fonts/Allura/Allura-Regular.ttf") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
 /* Theme Variables */
 :root {
   --font-sans: "Inter", sans-serif;
@@ -54,6 +61,7 @@ body {
   color: var(--color-text);
   text-decoration: none;
   letter-spacing: 0.5px;
+  font-family: "Allura", Roboto;
 }
 
 /* NAVIGATION */

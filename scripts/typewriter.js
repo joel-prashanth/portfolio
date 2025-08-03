@@ -6,48 +6,41 @@ const phrases = [
   "Software Development Instructor",
 ];
 
-let i = 0;
-let j = 0;
-let currentPhrase = [];
+let phraseIndex = 0;
+let letterIndex = 0;
 let isDeleting = false;
-let isEnd = false;
 
 function loop() {
-  isEnd = false;
-  typewriter.innerHTML = currentPhrase.join("");
+  const currentPhrase = phrases[phraseIndex];
+  let displayText;
 
-  if (i < phrases.length) {
-    if (!isDeleting && j <= phrases[i].length) {
-      currentPhrase.push(phrases[i][j]);
-      j++;
-      typewriter.innerHTML = currentPhrase.join("");
-    }
-
-    if (isDeleting && j <= phrases[i].length) {
-      currentPhrase.pop();
-      j--;
-      typewriter.innerHTML = currentPhrase.join("");
-    }
-
-    if (j === phrases[i].length) {
-      isEnd = true;
-      isDeleting = true;
-      setTimeout(loop, 1500);
-      return;
-    }
-
-    if (isDeleting && j === 0) {
-      currentPhrase = [];
-      isDeleting = false;
-      i++;
-      if (i === phrases.length) {
-        i = 0;
-      }
-    }
+  if (isDeleting) {
+    // Remove one character
+    letterIndex--;
+    displayText = currentPhrase.substring(0, letterIndex);
+  } else {
+    // Add one character
+    letterIndex++;
+    displayText = currentPhrase.substring(0, letterIndex);
   }
 
-  const speed = isEnd ? 1000 : isDeleting ? 40 : 90;
-  setTimeout(loop, speed);
+  typewriter.innerHTML = displayText;
+
+  // Set timeout speeds
+  let timeout = isDeleting ? 40 : 90;
+
+  if (!isDeleting && letterIndex === currentPhrase.length) {
+    // Done typing, wait before deleting
+    timeout = 1500;
+    isDeleting = true;
+  } else if (isDeleting && letterIndex === 0) {
+    // Finished deleting, move to next phrase
+    isDeleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    timeout = 500;
+  }
+
+  setTimeout(loop, timeout);
 }
 
 loop();

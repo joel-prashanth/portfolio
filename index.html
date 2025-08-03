@@ -13,6 +13,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <header class="site-header" role="banner">
       <div class="container header-container">
@@ -52,25 +53,47 @@
       </div>
     </header>
 
-    <main class="hero" id="about">
-      <div class="container hero-content hero-flex">
-        <div class="hero-image">
-          <img
-            src="assets/images/joel.jpg"
-            alt="Joel Profile"
-            class="profile-pic"
-          />
-        </div>
-        <div class="hero-text">
-          <h1>Hi, I'm Joel</h1>
-          <h2 id="typewriter" class="typewriter-text"></h2>
-          <p>Bringing ideas to life through clean code &amp; creativity.</p>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn-primary">View Projects</a>
-            <a href="#contact" class="btn-outline">Get in Touch</a>
+    <main>
+      <!-- About / Hero Section -->
+      <section class="hero" id="about">
+        <div class="container hero-content hero-flex">
+          <div class="hero-image">
+            <img
+              src="assets/images/joel.jpg"
+              alt="Joel Profile"
+              class="profile-pic"
+            />
+          </div>
+          <div class="hero-text">
+            <h1>Hi, I'm Joel</h1>
+            <h2 id="typewriter" class="typewriter-text"></h2>
+            <div class="tech-stack">
+              <p>Tech Stack:</p>
+              <ul class="tech-icons">
+                <li><img src="" alt="HTML" /></li>
+                <li><img src="" alt="CSS" /></li>
+                <li><img src="" alt="JS" /></li>
+              </ul>
+            </div>
+            <div class="hero-buttons">
+              <a href="#projects" class="btn-primary">View Projects</a>
+              <a href="#contact" class="btn-outline">Get in Touch</a>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Skills Section (Placeholder for now) -->
+      <section class="skills" id="skills">
+        <div class="container">
+          <h2>Skills</h2>
+          <p>
+            Coming soon: A list of my technical skills and tools I work with.
+          </p>
+        </div>
+      </section>
+
+      <!-- Projects and Contact sections will go below when added -->
     </main>
 
     <script src="scripts/navToggle.js"></script>

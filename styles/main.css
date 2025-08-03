@@ -111,6 +111,10 @@ body {
   width: 100%;
 }
 
+.skills {
+  text-align: center;
+}
+
 /* Toggle Buttons */
 .menu-toggle,
 .theme-toggle {
@@ -153,7 +157,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh; /* fill whole viewport height */
+  height: 100vh; /* fill whole viewport height */
+  width: 100vw;
   padding: 0 1rem;
   text-align: center; /* fallback for small screens */
 }
@@ -183,6 +188,7 @@ body {
 .hero-text {
   text-align: left;
   max-width: 500px;
+  width: 100%;
 }
 
 .hero-text h1 {
@@ -194,7 +200,12 @@ body {
   font-family: var(--font-mono);
   font-size: 1.3rem;
   color: var(--color-accent);
-  min-height: 1.5rem;
+  min-height: 2.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 100%;
 }
 
 .hero-text p {
@@ -494,4 +505,18 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.tech-icons {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0.5rem 0;
+  align-items: center;
+}
+
+.tech-icons li img {
+  width: 30px;
+  height: 30px;
 }

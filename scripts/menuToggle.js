@@ -1,19 +1,18 @@
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-const backdrop = document.getElementById("backdrop");
-const closeBtn = document.getElementById("closeBtn");
+const menu = document.getElementById("navLinks");
+const openBtn = document.getElementById("menuToggle");
+const closeBtn = document.getElementById("closeMenu");
+const backdrop = document.getElementById("navBackdrop");
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-  backdrop.classList.toggle("show");
-});
+function openMenu() {
+  menu.classList.remove("translate-x-full");
+  backdrop.classList.remove("hidden");
+}
 
-backdrop.addEventListener("click", () => {
-  navLinks.classList.remove("show");
-  backdrop.classList.remove("show");
-});
+function closeMenu() {
+  menu.classList.add("translate-x-full");
+  backdrop.classList.add("hidden");
+}
 
-closeBtn.addEventListener("click", () => {
-  navLinks.classList.remove("show");
-  backdrop.classList.remove("show");
-});
+openBtn.addEventListener("click", openMenu);
+closeBtn.addEventListener("click", closeMenu);
+backdrop.addEventListener("click", closeMenu);

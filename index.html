@@ -12,126 +12,150 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code&display=swap"
       rel="stylesheet"
     />
+      <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
+ <script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          accent: "#38bdf8 ",        // light mode accent
+          "accent-dark": "#4ade80", // dark mode accent (softer green)
+        },
+        fontFamily: {
+          sans: ["Inter", "sans-serif"],
+          mono: ["Fira Code", "monospace"],
+        },
+      },
+    },
+  };
+</script>
+
+    <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code&display=swap"
+    rel="stylesheet"
+  />
   </head>
 
-  <body>
-    <header class="site-header" role="banner">
-      <div class="container header-container">
-        <a href="#" class="logo" aria-label="Homepage">JP</a>
+  <body class="bg-white text-gray-900 dark:bg-[#0a0f1b] dark:text-gray-100 transition-colors">
 
-        <button
-          class="menu-toggle"
-          id="menuToggle"
-          aria-label="Toggle menu"
-          aria-controls="navLinks"
-          aria-expanded="false"
-        >
-          ☰
-        </button>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-white dark:bg-[#0a0f1b]">
+    <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-4">
 
-        <nav
-          class="nav-links"
-          id="navLinks"
-          role="navigation"
-          aria-label="Site Navigation"
-        >
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <button
-            id="themeToggle"
-            class="theme-toggle"
-            aria-label="Toggle dark/light theme"
-          >
-            🌙
-          </button>
-        </nav>
-        <div id="backdrop" class="nav-backdrop"></div>
-      </div>
-    </header>
+      <!-- Logo -->
+      <a href="#" class="text-2xl font-semibold tracking-wide">JP</a>
 
-    <main>
-      <!-- About / Hero Section -->
-      <section class="hero" id="about">
-        <div class="container hero-content hero-flex">
-          <div class="hero-image">
-            <img
-              src="assets/images/joel.jpg"
-              alt="Joel Profile"
-              class="profile-pic"
-            />
-          </div>
-          <div class="hero-text">
-            <h1>Hi, I'm Joel</h1>
-            <h2 id="typewriter" class="typewriter-text"></h2>
-            <div class="tech-stack">
-              <p>Tech Stack:</p>
-              <ul class="tech-icons">
-                <li>
-                  <img
-                    src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000"
-                    alt="HTML"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000"
-                    alt="CSS"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="https://img.icons8.com/?size=100&id=PXTY4q2Sq2lG&format=png&color=000000"
-                    alt="JS"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="https://img.icons8.com/?size=100&id=bzf0DqjXFHIW&format=png&color=000000"
-                    alt="React"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="https://img.icons8.com/?size=100&id=38561&format=png&color=000000"
-                    alt="Postgresql"
-                  />
-                </li>
-                <li>
-                  <img
-                    src="https://img.icons8.com/?size=100&id=bosfpvRzNOG8&format=png&color=000000"
-                    alt="MongoDB"
-                  />
-                </li>
-              </ul>
-            </div>
-            <div class="hero-buttons">
-              <a href="#projects" class="btn-primary">View Projects</a>
-              <a href="#contact" class="btn-outline">Get in Touch</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- Mobile Menu Button -->
+      <button
+        id="menuToggle"
+        class="md:hidden text-xl px-3 py-2 rounded hover:bg-white/10"
+        aria-label="Toggle menu"
+      >
+        ☰
+      </button>
 
-      <!-- Skills Section (Placeholder for now) -->
-      <section class="skills" id="skills">
-        <div class="container">
-          <h2>Skills</h2>
-          <p>
-            Coming soon: A list of my technical skills and tools I work with.
-          </p>
-        </div>
-      </section>
+      <!-- Navigation -->
+    <nav
+    id="navLinks"
+    class="fixed top-0 right-0 z-50 h-full w-72 max-w-[85vw]
+          bg-white dark:bg-[#0a0f1b]
+          transform translate-x-full
+          transition-transform duration-300
+          md:static md:translate-x-0 md:h-auto md:w-auto
+          md:flex md:items-center md:bg-transparent
+          px-6 pt-20 md:p-0"
+  >
+    <!-- Close Button (Mobile Only) -->
+    <button
+      id="closeMenu"
+      class="md:hidden absolute top-4 right-4 text-2xl p-2 rounded hover:bg-white/10"
+      aria-label="Close menu"
+    >
+      ✕
+    </button>
 
-      <!-- Projects and Contact sections will go below when added -->
-    </main>
+    <!-- Links -->
+    <ul class="flex flex-col md:flex-row gap-6 text-lg md:text-base">
+      <li><a href="#about" class="hover:text-accent dark:hover:text-accent-dark">About</a></li>
+      <li><a href="#projects" class="hover:text-accent dark:hover:text-accent-dark">Projects</a></li>
+      <li><a href="#skills" class="hover:text-accent dark:hover:text-accent-dark">Skills</a></li>
+      <li><a href="#contact" class="hover:text-accent dark:hover:text-accent-dark">Contact</a></li>
+    </ul>
 
-    <script src="scripts/navToggle.js"></script>
-    <script src="scripts/themeToggle.js"></script>
-    <script src="scripts/typewriter.js"></script>
-    <script src="scripts/menuToggle.js"></script>
-  </body>
+    <!-- Theme Toggle -->
+    <button
+      id="themeToggle"
+      class="mt-8 md:mt-0 md:ml-6 text-xl p-2 rounded hover:bg-white/10"
+      aria-label="Toggle theme"
+    >
+      🌙
+    </button>
+  </nav>
+
+<div
+  id="navBackdrop"
+  class="fixed inset-0 bg-black/50 z-40 hidden md:hidden"
+></div>
+
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+
+  <section id="about">
+    <div class="min-h-screen flex items-center justify-center gap-8">
+
+      <!-- Image -->
+      <img src="./assets/images/joel.jpg" class="rounded-full h-40 w-40" alt="Joel's Image">
+
+      <!-- Hero Text -->
+       <div class="flex flex-col">
+        <h2 class="text-4xl font-bold">Hi, I'm Joel</h2>
+     <p class="mt-2">
+  I am a:
+  <span class="relative inline-block min-w-[22ch]">
+    
+    <!-- Invisible placeholder (reserves space) -->
+    <span class="invisible font-mono">
+      Full Stack Developer | Robotics | IoT
+    </span>
+
+    <!-- Typewriter -->
+    <span
+      id="typewriter"
+      class="absolute left-0 top-0 font-mono text-accent dark:text-accent-dark"
+    ></span>
+
+  </span>
+</p>
+
+       </div>
+
+
+    </div>
+    
+  </section>
+
+
+
+
+
+  <!-- Skills Placeholder -->
+  <section id="skills" class="py-20 text-center">
+    <h2 class="text-3xl font-bold">Skills</h2>
+  </section>
+
+  <!-- Scripts -->
+  <script src="scripts/menuToggle.js"></script>
+  <script src="scripts/themeToggle.js"></script>
+  <script src="scripts/typewriter.js"></script>
+</body>
+
 </html>

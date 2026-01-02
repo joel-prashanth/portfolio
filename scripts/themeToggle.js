@@ -1,19 +1,27 @@
-const toggleBtn = document.getElementById("themeToggle");
-const themeLink = document.getElementById("theme-style");
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("themeToggle");
+  if (!toggle) return;
 
-const savedTheme = localStorage.getItem("theme");
-const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const html = document.documentElement;
 
-let currentTheme = savedTheme || (prefersDark ? "dark" : "light");
+  // Apply saved theme on load
+  const savedTheme = localStorage.getItem("theme");
+  const isDarkOnLoad = savedTheme === "dark";
 
-themeLink.setAttribute("href", `styles/${currentTheme}.css`);
-toggleBtn.textContent = currentTheme === "dark" ? "☀️" : "🌙";
+  if (isDarkOnLoad) {
+    html.classList.add("dark");
+  }
 
-//Theme toggle click event
+  // Set correct icon on load
+  toggle.textContent = isDarkOnLoad ? "☀️" : "🌙";
 
-toggleBtn.addEventListener("click", () => {
-  currentTheme = currentTheme === "dark" ? "light" : "dark";
-  themeLink.setAttribute("href", `styles/${currentTheme}.css`);
-  toggleBtn.textContent = currentTheme === "dark" ? "☀️" : "🌙";
-  localStorage.setItem("theme", currentTheme);
+  toggle.addEventListener("click", () => {
+    const isDark = html.classList.toggle("dark");
+
+    // Save preference
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    // Update icon
+    toggle.textContent = isDark ? "☀️" : "🌙";
+  });
 });

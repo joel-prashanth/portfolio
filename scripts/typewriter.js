@@ -4,6 +4,7 @@ const phrases = [
   "Full Stack Developer",
   "Web Designer",
   "Software Development Instructor",
+  "Robotics Engineer"
 ];
 
 let phraseIndex = 0;

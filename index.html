@@ -12,150 +12,234 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code&display=swap"
       rel="stylesheet"
     />
-      <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Tailwind Config -->
- <script>
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          accent: "#38bdf8 ",        // light mode accent
-          "accent-dark": "#4ade80", // dark mode accent (softer green)
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              accent: "#38bdf8 ", // light mode accent
+              "accent-dark": "#4ade80", // dark mode accent (softer green)
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["Fira Code", "monospace"],
+            },
+          },
         },
-        fontFamily: {
-          sans: ["Inter", "sans-serif"],
-          mono: ["Fira Code", "monospace"],
-        },
-      },
-    },
-  };
-</script>
+      };
+    </script>
 
     <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code&display=swap"
-    rel="stylesheet"
-  />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
   </head>
 
-  <body class="bg-white text-gray-900 dark:bg-[#0a0f1b] dark:text-gray-100 transition-colors">
-
-  <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-white dark:bg-[#0a0f1b]">
-    <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-4">
-
-      <!-- Logo -->
-      <a href="#" class="text-2xl font-semibold tracking-wide">JP</a>
-
-      <!-- Mobile Menu Button -->
-      <button
-        id="menuToggle"
-        class="md:hidden text-xl px-3 py-2 rounded hover:bg-white/10"
-        aria-label="Toggle menu"
-      >
-        ☰
-      </button>
-
-      <!-- Navigation -->
-    <nav
-    id="navLinks"
-    class="fixed top-0 right-0 z-50 h-full w-72 max-w-[85vw]
-          bg-white dark:bg-[#0a0f1b]
-          transform translate-x-full
-          transition-transform duration-300
-          md:static md:translate-x-0 md:h-auto md:w-auto
-          md:flex md:items-center md:bg-transparent
-          px-6 pt-20 md:p-0"
+  <body
+    class="bg-white text-gray-900 dark:bg-[#0a0f1b] dark:text-gray-100 transition-colors"
   >
-    <!-- Close Button (Mobile Only) -->
-    <button
-      id="closeMenu"
-      class="md:hidden absolute top-4 right-4 text-2xl p-2 rounded hover:bg-white/10"
-      aria-label="Close menu"
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-50 border-b border-white/10 bg-white dark:bg-[#0a0f1b]"
     >
-      ✕
-    </button>
+      <div
+        class="max-w-5xl mx-auto flex items-center justify-between px-4 py-4"
+      >
+        <!-- Logo -->
+        <a href="#" class="text-2xl font-semibold tracking-wide">JP</a>
 
-    <!-- Links -->
-    <ul class="flex flex-col md:flex-row gap-6 text-lg md:text-base">
-      <li><a href="#about" class="hover:text-accent dark:hover:text-accent-dark">About</a></li>
-      <li><a href="#projects" class="hover:text-accent dark:hover:text-accent-dark">Projects</a></li>
-      <li><a href="#skills" class="hover:text-accent dark:hover:text-accent-dark">Skills</a></li>
-      <li><a href="#contact" class="hover:text-accent dark:hover:text-accent-dark">Contact</a></li>
-    </ul>
+        <!-- Mobile Menu Button -->
+        <button
+          id="menuToggle"
+          class="md:hidden text-xl px-3 py-2 rounded hover:bg-white/10"
+          aria-label="Toggle menu"
+        >
+          ☰
+        </button>
 
-    <!-- Theme Toggle -->
-    <button
-      id="themeToggle"
-      class="mt-8 md:mt-0 md:ml-6 text-xl p-2 rounded hover:bg-white/10"
-      aria-label="Toggle theme"
-    >
-      🌙
-    </button>
-  </nav>
+        <!-- Navigation -->
+        <nav
+          id="navLinks"
+          class="fixed top-0 right-0 z-50 h-full w-72 max-w-[85vw] bg-white dark:bg-[#0a0f1b] transform translate-x-full transition-transform duration-300 md:static md:translate-x-0 md:h-auto md:w-auto md:flex md:items-center md:bg-transparent px-6 pt-20 md:p-0"
+        >
+          <!-- Close Button (Mobile Only) -->
+          <button
+            id="closeMenu"
+            class="md:hidden absolute top-4 right-4 text-2xl p-2 rounded hover:bg-white/10"
+            aria-label="Close menu"
+          >
+            ✕
+          </button>
 
-<div
-  id="navBackdrop"
-  class="fixed inset-0 bg-black/50 z-40 hidden md:hidden"
-></div>
+          <!-- Links -->
+          <ul class="flex flex-col md:flex-row gap-6 text-lg md:text-base">
+            <li>
+              <a
+                href="#about"
+                class="hover:text-accent dark:hover:text-accent-dark"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="hover:text-accent dark:hover:text-accent-dark"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="#skills"
+                class="hover:text-accent dark:hover:text-accent-dark"
+                >Skills</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="hover:text-accent dark:hover:text-accent-dark"
+                >Contact</a
+              >
+            </li>
+          </ul>
 
-    </div>
-  </header>
+          <!-- Theme Toggle -->
+          <button
+            id="themeToggle"
+            class="mt-8 md:mt-0 md:ml-6 text-xl p-2 rounded hover:bg-white/10"
+            aria-label="Toggle theme"
+          >
+            🌙
+          </button>
+        </nav>
 
-  <!-- Hero Section -->
+        <div
+          id="navBackdrop"
+          class="fixed inset-0 bg-black/50 z-40 hidden md:hidden"
+        ></div>
+      </div>
+    </header>
 
-  <section id="about">
-    <div class="min-h-screen flex items-center justify-center gap-8">
+    <!-- Hero Section -->
+    <section id="about">
+      <div class="min-h-screen flex items-center justify-center gap-8">
+        <!-- Image -->
+        <img
+          src="./assets/images/joel.jpg"
+          class="rounded-full h-40 w-40"
+          alt="Joel's Image"
+        />
 
-      <!-- Image -->
-      <img src="./assets/images/joel.jpg" class="rounded-full h-40 w-40" alt="Joel's Image">
+        <!-- Hero Text -->
+        <div class="flex flex-col">
+          <h2 class="text-4xl font-bold">Hi, I'm Joel</h2>
+          <p class="mt-2 mb-4">
+            I am a:
+            <span class="relative inline-block min-w-[22ch]">
+              <!-- Invisible placeholder (reserves space) -->
+              <span class="invisible font-mono">
+                Full Stack Developer | Robotics | IoT
+              </span>
 
-      <!-- Hero Text -->
-       <div class="flex flex-col">
-        <h2 class="text-4xl font-bold">Hi, I'm Joel</h2>
-     <p class="mt-2">
-  I am a:
-  <span class="relative inline-block min-w-[22ch]">
-    
-    <!-- Invisible placeholder (reserves space) -->
-    <span class="invisible font-mono">
-      Full Stack Developer | Robotics | IoT
-    </span>
+              <!-- Typewriter -->
+              <span
+                id="typewriter"
+                class="absolute left-0 top-0 font-mono text-accent dark:text-accent-dark"
+              ></span>
+            </span>
+          </p>
+          <p>Tech Stack I cover:</p>
+          <div
+            class="mt-4 flex items-center gap-4 text-3xl text-gray-700 dark:text-gray-300"
+          >
+            <i
+              class="devicon-html5-plain colored hover:scale-110 transition"
+            ></i>
+            <i
+              class="devicon-css3-plain colored hover:scale-110 transition"
+            ></i>
+            <i
+              class="devicon-javascript-plain colored hover:scale-110 transition"
+            ></i>
+            <i
+              class="devicon-react-original colored hover:scale-110 transition"
+            ></i>
+            <i
+              class="devicon-postgresql-plain colored hover:scale-110 transition"
+            ></i>
+            <i
+              class="devicon-mongodb-plain colored hover:scale-110 transition"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Typewriter -->
-    <span
-      id="typewriter"
-      class="absolute left-0 top-0 font-mono text-accent dark:text-accent-dark"
-    ></span>
+    <!-- Skills Placeholder -->
+    <section class="max-w-6xl min-h-screen mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold mb-10 text-center">What I Build</h2>
 
-  </span>
-</p>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Full Stack -->
+        <div class="bg-white shadow-lg rounded-2xl p-6">
+          <h3 class="text-xl font-semibold mb-3">🚀 Full-Stack Development</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• React, Angular, Next.js, TailwindCSS</li>
+            <li>• Node.js, Express, REST APIs, JWT Auth</li>
+            <li>• Built Fleet Management & Robot Control UIs</li>
+          </ul>
+        </div>
 
-       </div>
+        <!-- Robotics -->
+        <div class="bg-white shadow-lg rounded-2xl p-6">
+          <h3 class="text-xl font-semibold mb-3">
+            🤖 Robotics & Control Systems
+          </h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• ROS, Robot Control Systems (RCS)</li>
+            <li>• Fleet Management Systems (FMS)</li>
+            <li>• Outdoor autonomous vehicle integration</li>
+          </ul>
+        </div>
 
+        <!-- IoT -->
+        <div class="bg-white shadow-lg rounded-2xl p-6">
+          <h3 class="text-xl font-semibold mb-3">📡 IoT & Middleware</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• MQTT, BLE-based asset tracking</li>
+            <li>• Middleware services for device data flow</li>
+            <li>• Real-time monitoring dashboards</li>
+          </ul>
+        </div>
 
-    </div>
-    
-  </section>
+        <!-- Backend & DB -->
+        <div class="bg-white shadow-lg rounded-2xl p-6">
+          <h3 class="text-xl font-semibold mb-3">🗄 Backend & Databases</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• MongoDB, PostgreSQL, Prisma ORM</li>
+            <li>• API design & data modeling</li>
+            <li>• Scalable backend architecture</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-
-
-
-
-  <!-- Skills Placeholder -->
-  <section id="skills" class="py-20 text-center">
-    <h2 class="text-3xl font-bold">Skills</h2>
-  </section>
-
-  <!-- Scripts -->
-  <script src="scripts/menuToggle.js"></script>
-  <script src="scripts/themeToggle.js"></script>
-  <script src="scripts/typewriter.js"></script>
-</body>
-
+    <!-- Scripts -->
+    <script src="scripts/menuToggle.js"></script>
+    <script src="scripts/themeToggle.js"></script>
+    <script src="scripts/typewriter.js"></script>
+  </body>
 </html>

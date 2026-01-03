@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,8 +22,9 @@
         theme: {
           extend: {
             colors: {
-              accent: "#38bdf8 ", // light mode accent
-              "accent-dark": "#4ade80", // dark mode accent (softer green)
+              accent: "#2563EB", // calmer premium blue for light mode
+              "accent-soft": "#F6F8FC", // soft background
+              "accent-dark": "#4ade80",
             },
             fontFamily: {
               sans: ["Inter", "sans-serif"],
@@ -49,11 +50,11 @@
   </head>
 
   <body
-    class="bg-white text-gray-900 dark:bg-[#0a0f1b] dark:text-gray-100 transition-colors"
+    class="bg-[#F6F8FC] text-gray-900 dark:bg-[#0a0f1b] dark:text-gray-100 transition-colors"
   >
     <!-- Header -->
     <header
-      class="sticky top-0 z-50 border-b border-white/10 bg-white dark:bg-[#0a0f1b]"
+      class="sticky top-0 z-50 border-slate-200/60 bg-[#F6F8FC] dark:bg-[#0a0f1b]"
     >
       <div
         class="max-w-5xl mx-auto flex items-center justify-between px-4 py-4"
@@ -189,13 +190,15 @@
     </section>
 
     <!-- Skills Placeholder -->
-    <section class="max-w-6xl min-h-screen mx-auto px-6 py-16">
-      <h2 class="text-3xl font-bold mb-10 text-center">What I Build</h2>
+    <section class="max-w-6xl min-h-screen mx-auto px-6 py-16" id="skills">
+      <h2 class="text-3xl font-bold mb-10 text-center">What I Build:</h2>
 
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Full Stack -->
         <div class="bg-white shadow-lg rounded-2xl p-6">
-          <h3 class="text-xl font-semibold mb-3">🚀 Full-Stack Development</h3>
+          <h3 class="text-xl font-semibold mb-3 dark:text-black">
+            🚀 Full-Stack Development
+          </h3>
           <ul class="space-y-2 text-gray-700">
             <li>• React, Angular, Next.js, TailwindCSS</li>
             <li>• Node.js, Express, REST APIs, JWT Auth</li>
@@ -205,7 +208,7 @@
 
         <!-- Robotics -->
         <div class="bg-white shadow-lg rounded-2xl p-6">
-          <h3 class="text-xl font-semibold mb-3">
+          <h3 class="text-xl font-semibold mb-3 dark: text-black">
             🤖 Robotics & Control Systems
           </h3>
           <ul class="space-y-2 text-gray-700">
@@ -217,7 +220,9 @@
 
         <!-- IoT -->
         <div class="bg-white shadow-lg rounded-2xl p-6">
-          <h3 class="text-xl font-semibold mb-3">📡 IoT & Middleware</h3>
+          <h3 class="text-xl font-semibold mb-3 dark: text-black">
+            📡 IoT & Middleware
+          </h3>
           <ul class="space-y-2 text-gray-700">
             <li>• MQTT, BLE-based asset tracking</li>
             <li>• Middleware services for device data flow</li>
@@ -227,7 +232,9 @@
 
         <!-- Backend & DB -->
         <div class="bg-white shadow-lg rounded-2xl p-6">
-          <h3 class="text-xl font-semibold mb-3">🗄 Backend & Databases</h3>
+          <h3 class="text-xl font-semibold mb-3 dark: text-black">
+            🗄 Backend & Databases
+          </h3>
           <ul class="space-y-2 text-gray-700">
             <li>• MongoDB, PostgreSQL, Prisma ORM</li>
             <li>• API design & data modeling</li>
@@ -235,6 +242,16 @@
           </ul>
         </div>
       </div>
+    </section>
+
+    <!-- Projects Placeholder -->
+    <section id="projects">
+      <h2 class="text-3xl font-bold mb-10 text-center">My Work:</h2>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="max-w-6xl min-h-screen mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold mb-10 text-center">Get In Touch</h2>
     </section>
 
     <!-- Scripts -->
